@@ -1,11 +1,8 @@
-const db = require('../database/db');
+const projectsService = require('../services/projects.service');
 
 // GET /projects
 function listProjects(req, res) {
-  const projects = db
-    .prepare('SELECT * FROM projects WHERE owner = ?')
-    .all(req.user.email);
-
+  const projects = projectsService.getProjectsByOwner(req.user.email);
   return res.json(projects);
 }
 
@@ -17,20 +14,11 @@ function createProject(req, res) {
     return res.status(400).json({ message: 'Title is required' });
   }
 
-  const createdAt = new Date().toISOString();
-
-  const result = db.prepare(`
-    INSERT INTO projects (title, description, owner, createdAt)
-    VALUES (?, ?, ?, ?)
-  `).run(title, description || '', req.user.email, createdAt);
-
-  const project = {
-    id: result.lastInsertRowid,
+  const project = projectsService.createProject({
     title,
-    description: description || '',
-    owner: req.user.email,
-    createdAt
-  };
+    description,
+    owner: req.user.email
+  });
 
   return res.status(201).json(project);
 }
@@ -40,24 +28,20 @@ function updateProject(req, res) {
   const { id } = req.params;
   const { title, description } = req.body;
 
-  const project = db.prepare(
-    'SELECT * FROM projects WHERE id = ? AND owner = ?'
-  ).get(id, req.user.email);
+  const existing = projectsService.getProjectById({
+    id,
+    owner: req.user.email
+  });
 
-  if (!project) {
+  if (!existing) {
     return res.status(404).json({ message: 'Project not found' });
   }
 
-  db.prepare(`
-    UPDATE projects
-    SET title = COALESCE(?, title),
-        description = COALESCE(?, description)
-    WHERE id = ?
-  `).run(title, description, id);
-
-  const updated = db.prepare(
-    'SELECT * FROM projects WHERE id = ?'
-  ).get(id);
+  const updated = projectsService.updateProject({
+    id,
+    title,
+    description
+  });
 
   return res.json(updated);
 }
@@ -66,11 +50,12 @@ function updateProject(req, res) {
 function deleteProject(req, res) {
   const { id } = req.params;
 
-  const result = db.prepare(
-    'DELETE FROM projects WHERE id = ? AND owner = ?'
-  ).run(id, req.user.email);
+  const deleted = projectsService.deleteProject({
+    id,
+    owner: req.user.email
+  });
 
-  if (result.changes === 0) {
+  if (!deleted) {
     return res.status(404).json({ message: 'Project not found' });
   }
 
