@@ -63,7 +63,9 @@ backend/
 ### Login
 ```http
 POST /auth/login
+```
 Body (JSON):
+
 ```
 {
   "email": "admin@portfolio.dev",
