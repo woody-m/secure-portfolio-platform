@@ -1,13 +1,13 @@
 const { authenticate } = require('../services/auth.service');
 
-function login(req, res) {
+async function login(req, res) {
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
-  const token = authenticate(email, password);
+  const token = await authenticate(email, password);
 
   if (!token) {
     return res.status(401).json({ message: 'Invalid credentials' });
@@ -17,4 +17,3 @@ function login(req, res) {
 }
 
 module.exports = { login };
-
