@@ -18,6 +18,35 @@ Este backend permite:
 - Separação clara de responsabilidades (Routes, Controllers, Services, Database)
 
 ---
+Este projeto foi projetado com uma abordagem security-first, mesmo sendo uma aplicação de portfólio.
+
+## Estratégia de Autenticação
+
+Autenticação stateless utilizando JWT (JSON Web Token)
+Tokens possuem expiração (exp) para reduzir o risco de credenciais de longa duração
+As credenciais são transmitidas exclusivamente pelo header Authorization: Bearer
+
+## Autorização & Proteção de Rotas
+
+Middleware centralizado valida todas as requisições protegidas
+Requisições sem token, com token inválido ou expirado são negadas por padrão
+Rotas protegidas são agrupadas com router.use(authMiddleware) para evitar exposições acidentais
+
+## Ameaças Mitigadas
+
+❌ Acesso não autorizado a recursos protegidos
+❌ Reutilização de token após expiração
+❌ Exposição acidental de rotas sensíveis
+❌ SQL Injection através do uso de prepared statements
+
+## Por que JWT?
+
+O JWT foi escolhido em vez de autenticação baseada em sessão para:
+Manter a API stateless
+Facilitar escalabilidade
+Refletir arquiteturas de backend utilizadas em ambientes de produção
+
+---
 
 ## 🏗️ Arquitetura do Projeto
 
@@ -207,6 +236,36 @@ Route protection via middleware
 Full CRUD operations for projects
 Real data persistence with SQLite
 Clear separation of concerns (Routes, Controllers, Services, Database)
+
+---
+
+This project was designed with a security-first mindset, even as a portfolio application.
+
+## Authentication Strategy
+
+Stateless authentication using JWT (JSON Web Token)
+Tokens include expiration (exp) to reduce the risk of long-lived credentials
+Authentication data is transmitted exclusively via the Authorization: Bearer header
+
+## Authorization & Route Protection
+
+Centralized authentication middleware validates every protected request
+Requests without a token, with an invalid token, or with an expired token are denied by default
+Protected routes are grouped using router.use(authMiddleware) to prevent accidental exposure
+
+## Threats Mitigated
+
+❌ Unauthorized access to protected resources
+❌ Token reuse after expiration
+❌ Accidental public exposure of sensitive routes
+❌ SQL injection through the use of prepared statements
+
+## Why JWT?
+
+JWT was chosen over session-based authentication to:
+Keep the API stateless
+Simplify scalability
+Reflect real-world backend architectures used in production environments
 
 ---
 ## 🔐 Authentication & Security
