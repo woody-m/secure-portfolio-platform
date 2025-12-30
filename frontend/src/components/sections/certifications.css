@@ -1,0 +1,166 @@
+.certifications {
+    padding: 100px 80px;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.certifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.certifications-header h2 {
+    font-size: 36px;
+    margin-bottom: 6px;
+}
+
+.certifications-header p {
+    color: var(--text-muted);
+}
+
+/* ========================= */
+/* NAVEGAÇÃO */
+/* ========================= */
+
+.cert-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.cert-nav button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cert-nav button:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ========================= */
+/* TRACK / CARROSSEL */
+/* ========================= */
+
+.cert-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 12px;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+.cert-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cert-track::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cert-track::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        rgba(155, 92, 255, 0.6)
+    );
+    border-radius: 8px;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.cert-card {
+    min-width: 240px;
+    background: #f7f8fa;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================= */
+/* ÍCONE */
+/* ========================= */
+
+.cert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(155, 92, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+
+    box-shadow:
+        0 6px 16px rgba(155, 92, 255, 0.25),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+.cert-card h3 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.cert-org {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.cert-date {
+    font-size: 12px;
+    margin-top: 8px;
+    color: var(--text-muted);
+}
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .certifications {
+        padding: 60px 20px;
+    }
+
+    .certifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .cert-track::-webkit-scrollbar {
+        height: 6px;
+    }
+}

@@ -1,0 +1,116 @@
+.projects {
+    padding: 100px 80px;
+}
+
+.projects h2 {
+    font-size: 36px;
+    margin-bottom: 48px;
+}
+
+/* GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* CARD */
+.project-card {
+    background: #f7f8fa;
+    border-radius: 16px;
+    padding: 16px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* IMAGE */
+.project-image {
+    background: #d9d9d9;
+    height: 180px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+/* CONTENT */
+.project-content h3 {
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* CTA MODERNO */
+.project-content a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding-bottom: 4px;
+}
+
+/* UNDERLINE ANIMADO */
+.project-content a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+
+    transition: width 0.3s ease;
+}
+
+/* SETA */
+.project-content a::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+/* HOVER INTERACTIONS */
+.project-card:hover .project-content a::before {
+    width: 100%;
+}
+
+.project-card:hover .project-content a::after {
+    transform: translateX(6px);
+}
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 60px 20px;
+    }
+}
