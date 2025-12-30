@@ -1,7 +1,32 @@
+import './hero.css';
+import heroImage from '../../assets/images/hero.png';
+
 function Hero() {
     return (
-        <section id="home" style={{ padding: '80px 24px' }}>
-            <h1>Hero</h1>
+        <section className="hero">
+            <div className="hero-left">
+                <p className="hello">Hello 👋, I am</p>
+
+                <h1>
+                    Dana <br />
+                    <span>Smith</span>
+                </h1>
+
+                <p className="description">
+                    Aliquam commodo mi semper metus mattis, ac tincidunt metus molestie.
+                    Aenean lobortis augue sit amet.
+                </p>
+
+                <button className="cv-btn">Download CV</button>
+
+                <div className="socials">
+                    <span>●</span><span>●</span><span>●</span><span>●</span>
+                </div>
+            </div>
+
+            <div className="hero-right">
+                <img src={heroImage} alt="profile" />
+            </div>
         </section>
     );
 }

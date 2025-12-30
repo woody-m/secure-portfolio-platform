@@ -1,15 +1,20 @@
+import './header.css';
+
 function Header() {
     return (
-        <header style={{ padding: '24px', borderBottom: '1px solid #eee' }}>
-            <nav style={{ display: 'flex', gap: '20px' }}>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#contact">Contact</a>
+        <header className="header">
+            <div className="logo">Portfolio</div>
+
+            <nav className="nav">
+                <a className="active">Home</a>
+                <a>About Me</a>
+                <a>Resume</a>
+                <a>Services</a>
+                <a>Portfolio</a>
+                <a>Contact</a>
             </nav>
+
+            <button className="connect-btn">CONNECT</button>
         </header>
     );
 }
