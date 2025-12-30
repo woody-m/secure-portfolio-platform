@@ -8,8 +8,8 @@ function Hero() {
                 <p className="hello">Hello 👋, I am</p>
 
                 <h1>
-                    Dana <br />
-                    <span>Smith</span>
+                    Bruna <br />
+                    <span>Lopes</span>
                 </h1>
 
                 <p className="description">
