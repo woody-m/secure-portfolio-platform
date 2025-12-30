@@ -1,0 +1,53 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px;
+    background: var(--bg-gradient);
+}
+
+.hero-left h1 {
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.hero-left h1 span {
+    color: var(--dark);
+}
+
+.hello {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.description {
+    max-width: 480px;
+    color: var(--text-muted);
+    margin: 24px 0;
+}
+
+.cv-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin-bottom: 32px;
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-right {
+    background: var(--primary);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.hero-right img {
+    max-width: 280px;
+}
