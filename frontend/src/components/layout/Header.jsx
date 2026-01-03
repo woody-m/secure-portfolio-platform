@@ -1,20 +1,26 @@
 import './header.css';
 
 function Header() {
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header className="header">
             <div className="logo">Portfolio</div>
 
             <nav className="nav">
-                <a className="active">Home</a>
-                <a>About Me</a>
-                <a>Resume</a>
-                <a>Services</a>
-                <a>Portfolio</a>
-                <a>Contact</a>
+                <a className="active" onClick={() => scrollToSection('home')}>Home</a>
+                <a onClick={() => scrollToSection('about')}>About Me</a>
+                <a onClick={() => scrollToSection('skills')}>Skills</a>
+                <a onClick={() => scrollToSection('projects')}>Projects</a>
+                <a onClick={() => scrollToSection('certifications')}>Certifications</a>
+                <a onClick={() => scrollToSection('service')}>Service</a>
+                <a onClick={() => scrollToSection('contact')}>Contact</a>
             </nav>
-
-            <button className="connect-btn">CONNECT</button>
         </header>
     );
 }

@@ -1,5 +1,5 @@
 import './hero.css';
-import heroImage from '../../assets/images/hero.png';
+import brunaImage from '../../assets/images/bruna.png';
 
 function Hero() {
     return (
@@ -8,24 +8,36 @@ function Hero() {
                 <p className="hello">Hello 👋, I am</p>
 
                 <h1>
-                    Bruna <br />
-                    <span>Lopes</span>
+                    Bruna Lopes<br /><span></span>
                 </h1>
 
                 <p className="description">
-                    Aliquam commodo mi semper metus mattis, ac tincidunt metus molestie.
-                    Aenean lobortis augue sit amet.
+                    Software Engineer specialized in architecture, security, and scalable digital solutions.
+                    I build robust systems that transform complex requirements into reliable products.
+                    My work is guided by strong engineering principles, clean architecture, and security by design, delivering solutions built to scale, maintain, and generate real business value.
                 </p>
+                <a
+                    href="/CV/Bruna-Lopes-Software-Engineer.pdf"
+                    download
+                    className="cv-btn"
+                >
+                    Download CV
+                </a>
 
-                <button className="cv-btn">Download CV</button>
+
 
                 <div className="socials">
-                    <span>●</span><span>●</span><span>●</span><span>●</span>
+                    <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
                 </div>
             </div>
 
             <div className="hero-right">
-                <img src={heroImage} alt="profile" />
+                {/* sua foto profissional */}
+                <img
+                    src={brunaImage}
+                    alt="Bruna Lopes"
+                    className="hero-photo"
+                />
             </div>
         </section>
     );

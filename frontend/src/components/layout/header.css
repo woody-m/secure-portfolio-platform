@@ -1,13 +1,16 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;   /* centraliza a navegação */
     padding: 24px 80px;
+    position: relative;        /* base para posicionar o logo */
 }
 
 .logo {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 30px;
+    position: absolute;        /* fixa no canto esquerdo */
+    left: 80px;                /* alinhado com o padding */
 }
 
 .nav {
@@ -36,6 +39,7 @@
     background: var(--primary);
 }
 
+/* botão mantido caso volte a ser usado futuramente */
 .connect-btn {
     background: var(--primary);
     color: white;
@@ -45,11 +49,16 @@
     font-weight: 500;
 }
 
+/* MOBILE — comportamento preservado */
 @media (max-width: 768px) {
     .header {
         padding: 16px 20px;
         flex-wrap: wrap;
         gap: 12px;
+    }
+
+    .logo {
+        position: static;      /* volta ao fluxo normal no mobile */
     }
 
     .nav {
