@@ -9,33 +9,29 @@ function WorkHistory() {
                     <span>History</span>
                 </h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi eget ligula at lectus.
+                    My professional experience spans software engineering and product development. I currently focus on building well-structured, secure, and scalable software, supported by a strong background in user experience, data analysis, and digital products.
                 </p>
                 <button className="read-more">Read More</button>
             </div>
 
             <div className="work-right">
                 <div className="work-card">
-                    <span className="period">2015 - 2017</span>
-                    <h3>UI/UX Designer</h3>
-                    <h4>Company Name</h4>
+                    <span className="period">2022 – Present</span>
+                    <h3>Software Engineer (Applied Projects & Product Development)</h3>
+                    <h4>Academic & Independent Projects · Remote</h4>
                     <p>
-                        Cras accumsan lacus pulvinar. Tincidunt, semper arcu non,
-                        consequat arcu.
+                        Design and development of software solutions with a strong focus on architecture, code organization, and security best practices.
+                        Worked on frontend and backend projects, applying clean architecture principles, authentication flows, and scalable system design.
                     </p>
-                    <a>Read More →</a>
                 </div>
 
                 <div className="work-card">
-                    <span className="period">2017 - 2019</span>
-                    <h3>UI/UX Designer</h3>
-                    <h4>Company Name</h4>
+                    <span className="period">2022 – 2024</span>
+                    <h3>Digital Solutions Specialist (Paid Traffic & Web Design)</h3>
+                    <h4>Freelance · Remote</h4>
                     <p>
-                        Cras accumsan lacus pulvinar. Tincidunt, semper arcu non,
-                        consequat arcu.
+                        Worked with paid traffic management and web design, planning and optimizing digital campaigns and interfaces with a strong focus on conversion and user experience.
                     </p>
-                    <a>Read More →</a>
                 </div>
             </div>
         </section>
