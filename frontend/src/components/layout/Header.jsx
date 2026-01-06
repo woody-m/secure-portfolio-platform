@@ -14,7 +14,6 @@ function Header() {
     }, []);
 
     const scrollToSection = (id) => {
-        // HOME → volta exatamente ao topo
         if (id === 'home') {
             window.scrollTo({
                 top: 0,
@@ -38,8 +37,8 @@ function Header() {
             <nav className="nav">
                 <a onClick={() => scrollToSection('home')}>Home</a>
                 <a onClick={() => scrollToSection('about')}>About Me</a>
-                <a onClick={() => scrollToSection('skills')}>Skills</a>
                 <a onClick={() => scrollToSection('projects')}>Projects</a>
+                <a onClick={() => scrollToSection('skills')}>Skills</a>
                 <a onClick={() => scrollToSection('certifications')}>Certifications</a>
                 <a onClick={() => scrollToSection('service')}>Service</a>
                 <a onClick={() => scrollToSection('contact')}>Contact</a>

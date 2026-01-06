@@ -2,32 +2,27 @@ import './experience.css';
 
 const experiences = [
     {
-        period: '2023 - Present',
-        role: 'Software Engineer',
-        company: 'Company Name',
+        role: 'Software Engineering & Architecture',
         tasks: [
-            'Responsibilities to stimulate sequential cross-collaboration.',
-            'Responsibilities to enhance blockchain and backend processes.',
-            'Responsibilities to improve operational scalability.',
+            'Design and development of well-structured software systems with a strong focus on clean architecture and code organization.',
+            'Application of modular design principles to build scalable, maintainable, and easy-to-evolve systems.',
+            'Implementation of backend and frontend logic with attention to long-term sustainability and technical quality.',
         ],
     },
     {
-        period: '2020 - 2023',
-        role: 'Software Engineer',
-        company: 'Company Name',
+        role: 'Frontend Development, UI & UX',
         tasks: [
-            'Responsibilities to implement workflows and core modules.',
-            'Responsibilities to maintain security and privacy layers.',
-            'Responsibilities to collaborate across teams.',
+            'Development of responsive and accessible user interfaces focused on clarity, usability, and user experience.',
+            'Collaboration between design and engineering principles to translate ideas into intuitive digital interfaces.',
+            'Attention to visual hierarchy, interaction feedback, and consistency across the user journey.',
         ],
     },
     {
-        period: '2018 - 2020',
-        role: 'Software Engineer',
-        company: 'Company Name',
+        role: 'Security, Scalability & Product Thinking',
         tasks: [
-            'Responsibilities to analyze system architecture.',
-            'Responsibilities to improve performance and maintainability.',
+            'Implementation of authentication flows and security-conscious features aligned with best practices.',
+            'Design of solutions that consider performance, scalability, and real-world usage scenarios.',
+            'Strong product-oriented mindset, aligning technical decisions with business goals and user needs.',
         ],
     },
 ];
@@ -35,20 +30,17 @@ const experiences = [
 function Experience() {
     return (
         <section className="experience" id="experience">
-            <h2>Experience</h2>
+            <h2>Applied Software Engineering</h2>
 
             <div className="timeline">
                 {experiences.map((exp, index) => (
                     <div className="timeline-item" key={index}>
                         <div className="timeline-left">
-                            <span className="period">{exp.period}</span>
                             <span className="dot" />
                         </div>
 
                         <div className="timeline-right">
-                            <h3>
-                                {exp.company} – <span>{exp.role}</span>
-                            </h3>
+                            <h3>{exp.role}</h3>
                             <ul>
                                 {exp.tasks.map((task, i) => (
                                     <li key={i}>{task}</li>

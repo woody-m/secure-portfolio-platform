@@ -22,11 +22,11 @@
 .timeline::before {
     content: '';
     position: absolute;
-    left: 110px;
+    left: 40px; /* metade do timeline-left */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: rgba(155, 92, 255, 0.25);
+    background: rgba(155, 92, 255, 0.35);
 }
 
 /* ========================= */
@@ -43,10 +43,9 @@
 /* LADO ESQUERDO */
 .timeline-left {
     position: relative;
+    width: 80px; /* eixo fixo da timeline */
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 32px;
+    justify-content: center;
 }
 
 .timeline-left .period {
@@ -63,18 +62,19 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-
     background: var(--primary);
 
-    /* Robinho / halo */
+    /* Halo mantido */
     box-shadow:
         0 0 0 6px rgba(155, 92, 255, 0.18),
         0 8px 18px rgba(155, 92, 255, 0.45);
 
     position: absolute;
-    right: -7px;
-    top: 26px;
+    top: 0;
+    transform: translateY(6px); /* ajuste vertical fino */
+    z-index: 2;
 }
+
 
 /* ========================= */
 /* CONTEÚDO */
